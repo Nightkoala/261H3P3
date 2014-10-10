@@ -20,6 +20,13 @@ public class DivKSubsequence {
 	
 	// Constructor
 	
+	/**
+	 * Constructor for creating a DivKSubsequence instance
+	 * 
+	 * @param values	The values given by user
+	 * @param k			The 'dividing by k' value
+	 * @param size		The size of the input
+	 */
 	public DivKSubsequence( int[] values, int k, int size ) {
 		this.sequence = values;
 		this.k = k;
@@ -28,6 +35,16 @@ public class DivKSubsequence {
 	
 	// Methods
 	
+	/**
+	 * Dynamic programming implementation for finding the length of the longest
+	 * subsequence of values where no two consecutive elements have the same
+	 * remainder when divided by k.
+	 * 
+	 * @param D		The object containing the original sequence, the solution
+	 * 				array, and the value for k.
+	 * 
+	 * @return		The length of the longest subsequence
+	 */
 	public int DivKAlgorithm( DivKSubsequence D ) {
 		for( int j = 0 ; j < D.sequence.length ; j++ ) {
 			D.s[j] = 1;
@@ -46,6 +63,14 @@ public class DivKSubsequence {
 		return max;
 	}//end DivKAlgorithm
 
+	/**
+	 * Main method, reads in input from the user and feeds that information into
+	 * the algorithm, the algorithm then finds the length of the longest
+	 * subsequence of values where no two consecutive values have the same
+	 * remainder when divided by k.
+	 * 
+	 * @param args	Command line arguments, unused.
+	 */
 	public static void main(String[] args) {
 		Scanner sc = new Scanner( System.in );
 		String input = sc.next();
